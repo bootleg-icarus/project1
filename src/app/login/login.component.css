@@ -1,0 +1,15 @@
+.container{
+    width: 70%;
+    height: 10em;
+    text-align: center;    
+    border: 1px solid black;
+    margin: 8em auto 10px auto;
+    
+}
+.baby{
+    display: inline-block;
+}
+
+input{
+    margin: 10px 10px;
+}
