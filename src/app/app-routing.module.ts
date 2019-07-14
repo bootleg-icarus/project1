@@ -6,12 +6,14 @@ import { StudentComponent } from './home/student/student.component';
 import { LoginComponent } from './login/login.component';
 import { AboutUsComponent } from './about-us/about-us.component';
 import { ContactComponent } from './contact/contact.component';
+import { SecurityGuard } from './security.guard';
 
 const routes: Routes = [
   {path: '', redirectTo: 'login', pathMatch: 'full'},
   {
     path: 'home',
     component: HomeComponent,
+    canActivate: [SecurityGuard],
     children: [
       {path: '', redirectTo: 'login', pathMatch: 'full'},
       {path: 'faculty', component: FacultyComponent},

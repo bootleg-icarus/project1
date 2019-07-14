@@ -5,7 +5,13 @@ import { Injectable } from '@angular/core';
 })
 export class AuthService {
 
-  constructor() { }
+  private isUserLoggedIn;
+
+
+  constructor() { 
+    this.isUserLoggedIn = false;
+  }
+  
   emailList(){
     return[
       {"email": "abc@gmail.com", "password": "123"},
@@ -13,5 +19,11 @@ export class AuthService {
       {"email": "zxc@gmail.com", "password": "123"},
       {"email": "asd@gmail.com", "password": "123"}
     ];
+  }
+  getUserLoggedIn(){
+    return this.isUserLoggedIn;
+  }
+  setUserLoggedIn(){
+    this.isUserLoggedIn = true;
   }
 }
