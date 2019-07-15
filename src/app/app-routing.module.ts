@@ -2,11 +2,11 @@ import { NgModule, Component } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { FacultyComponent } from './home/faculty/faculty.component';
-import { StudentComponent } from './home/student/student.component';
 import { LoginComponent } from './login/login.component';
 import { AboutUsComponent } from './about-us/about-us.component';
 import { ContactComponent } from './contact/contact.component';
 import { SecurityGuard } from './security.guard';
+import { RegisterComponent } from './register/register.component';
 
 const routes: Routes = [
   {path: '', redirectTo: 'login', pathMatch: 'full'},
@@ -16,13 +16,13 @@ const routes: Routes = [
     canActivate: [SecurityGuard],
     children: [
       {path: '', redirectTo: 'login', pathMatch: 'full'},
-      {path: 'faculty', component: FacultyComponent},
-      {path: 'student', component: StudentComponent}
+      {path: 'faculty', component: FacultyComponent}
     ]
   },
   {path: 'login', component: LoginComponent},
   {path: 'aboutus', component: AboutUsComponent},
   {path: 'contact', component: ContactComponent},
+  {path: 'register', component: RegisterComponent},
   
   {path: '**', redirectTo: 'login', pathMatch: 'full'}
 ];

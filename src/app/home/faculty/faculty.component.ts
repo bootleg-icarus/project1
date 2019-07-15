@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from 'src/app/auth.service';
+import { __asyncValues } from 'tslib';
 
 @Component({
   selector: 'app-faculty',
@@ -7,9 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FacultyComponent implements OnInit {
 
-  constructor() { }
+  constructor(private _authservice: AuthService) { }
 
   ngOnInit() {
+    console.log(this.lstudent);
   }
 
+  lstudent=this._authservice.student;
+  deleteStudent(i){
+    this._authservice.removeStudent(i);
+  }
 }

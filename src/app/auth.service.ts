@@ -6,7 +6,11 @@ import { Injectable } from '@angular/core';
 export class AuthService {
 
   private isUserLoggedIn;
-
+  student = [
+    {"name": "Rahul1", "age": "27"},
+    {"name": "Rahul2", "age": "27"},
+    {"name": "Rahul3", "age": "27"}
+  ];
 
   constructor() { 
     this.isUserLoggedIn = false;
@@ -23,7 +27,13 @@ export class AuthService {
   getUserLoggedIn(){
     return this.isUserLoggedIn;
   }
-  setUserLoggedIn(){
-    this.isUserLoggedIn = true;
+  setUserLoggedIn(f){
+    this.isUserLoggedIn = f;
+  }
+  pushStudentData(s){
+    this.student.push(s);
+  }
+  removeStudent(i){
+    this.student.splice(i,1);
   }
 }

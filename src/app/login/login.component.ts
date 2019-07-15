@@ -11,21 +11,19 @@ import { Router } from '@angular/router';
 export class LoginComponent implements OnInit {
 
   auth = [];
-  email : string = "email@abc.com";
-  password : string = '';
+  email : string = "abc@gmail.com";
+  password : string = '123';
 
   constructor(private router:Router ,private _authService : AuthService) { }
 
   ngOnInit() {
-    this.auth = this._authService.emailList();
-    console.log(this.auth);
-    
+    this.auth = this._authService.emailList();    
   }
   loginValid(){
     if(this.email == this.auth[0].email && this.password == this.auth[0].password){
-      this._authService.setUserLoggedIn();
-      this.router.navigate(['home']);
       localStorage.setItem('email', this.email);
+      this._authService.setUserLoggedIn(true);
+      this.router.navigate(['home']);
     }
   }
 }

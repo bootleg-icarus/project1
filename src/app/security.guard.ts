@@ -8,13 +8,17 @@ import { AuthService } from './auth.service';
 })
 export class SecurityGuard implements CanActivate {
 
-  constructor(private auth:AuthService){
-
-  }
+  constructor(){}
+  
   canActivate(
     next: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-    return this.auth.getUserLoggedIn();
+    return this.emailsaved();
   }
   
+  emailsaved(){
+    if(localStorage.getItem('email')){
+      return true;
+    }
+  }
 }
