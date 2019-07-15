@@ -20,5 +20,7 @@ export class RegisterComponent implements OnInit {
   addnew(name,age){
     
     this._authservice.pushStudentData({name,age});
+    this.name='';
+    this.age= null;
   }
 }

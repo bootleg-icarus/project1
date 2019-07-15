@@ -1,4 +1,9 @@
-<p>faculty works!</p>
+
 <li *ngFor="let student of lstudent; index as i">
-    {{student.name}}---{{student.age}} <button (click)= " deleteStudent(i)">Delete</button>
+    <span id="name">Name : {{student.name}}</span>
+    <span id="age">&nbsp;&nbsp;&nbsp; Age: {{student.age}}</span> 
+    <br>
+    <br>
+    <button (click)= " deleteStudent(i)">Delete</button>
+    <hr>
 </li>

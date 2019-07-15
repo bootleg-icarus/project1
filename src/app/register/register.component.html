@@ -1,8 +1,8 @@
 <h3>Register new Students </h3>
 <form >
     <label for="name">Name</label>
-    <input type="text" id="name" [(ngModel)]='name' name='name'>
+    <input type="text" id="name" [(ngModel)]='name' name='name' required>
     <label for="age">Age</label>
-    <input type="text" id="age" [(ngModel)]='age' name='age'>
+    <input type="text" id="age" [(ngModel)]='age' name='age' required>
     <button (click)=" addnew(name,age)">Add New</button>
 </form>
