@@ -1,9 +1,8 @@
 .container{
     width: 70%;
-    height: 10em;
+    height: 12em;
     text-align: center;    
-    border: 1px solid black;
-    margin: 8em auto 10px auto;
+    margin: 5em auto 10px auto;
     
 }
 .baby{

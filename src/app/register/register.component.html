@@ -1,8 +1,16 @@
-<h3>Register new Students </h3>
-<form >
-    <label for="name">Name</label>
-    <input type="text" id="name" [(ngModel)]='name' name='name' required>
-    <label for="age">Age</label>
-    <input type="text" id="age" [(ngModel)]='age' name='age' required>
-    <button (click)=" addnew(name,age)">Add New</button>
-</form>
+<div class="container">
+    <h3>Register new Students </h3>
+    <form >
+        <label for="name">Name: &nbsp;&nbsp;</label>
+        <mat-form-field>
+            <input matInput type="text" id="name" [(ngModel)]='name' name='name' required>
+        </mat-form-field>
+        <br>
+        <label for="age">Age: &nbsp;&nbsp;</label>
+        <mat-form-field>
+            <input matInput type="text" id="age" [(ngModel)]='age' name='age' required>
+        </mat-form-field>
+        <br>
+        <button mat-raised-button (click)=" addnew(name,age)">Add New</button>
+    </form>
+</div>
