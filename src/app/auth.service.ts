@@ -35,5 +35,6 @@ export class AuthService {
   }
   removeStudent(i){
     this.student.splice(i,1);
+    console.log(this.student);
   }
 }

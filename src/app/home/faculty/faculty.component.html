@@ -1,9 +1,24 @@
+<div>
+<mat-table [dataSource]="lstudent" class="mat-elevation-z8">
 
-<li *ngFor="let student of lstudent; index as i">
-    <span id="name">Name : {{student.name}}</span>
-    <span id="age">&nbsp;&nbsp;&nbsp; Age: {{student.age}}</span> 
-    <br>
-    <br>
-    <button (click)= " deleteStudent(i)">Delete</button>
-    <hr>
-</li>
+    <!-- Name Column -->
+    <ng-container matColumnDef="name">
+      <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.name}} </mat-cell>
+    </ng-container>
+  
+    <ng-container matColumnDef="age">
+      <mat-header-cell *matHeaderCellDef> Age </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.age}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="edit">
+      <mat-header-cell *matHeaderCellDef>Edit</mat-header-cell>
+      <mat-cell *matCellDef='let i = index'><button (click)= "deleteStudent(i)">Delete</button></mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>>
+    
+</mat-table>
+</div>

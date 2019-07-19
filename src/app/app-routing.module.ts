@@ -7,6 +7,8 @@ import { AboutUsComponent } from './about-us/about-us.component';
 import { ContactComponent } from './contact/contact.component';
 import { SecurityGuard } from './security.guard';
 import { RegisterComponent } from './register/register.component';
+import { EditComponent} from './home/edit/edit.component';
+
 
 const routes: Routes = [
   {path: '', redirectTo: 'login', pathMatch: 'full'},
@@ -16,13 +18,15 @@ const routes: Routes = [
     canActivate: [SecurityGuard],
     children: [
       {path: '', redirectTo: 'login', pathMatch: 'full'},
-      {path: 'faculty', component: FacultyComponent}
+      {path: 'faculty', component: FacultyComponent},
+      {path: 'edit', component: EditComponent}
     ]
   },
   {path: 'login', component: LoginComponent},
   {path: 'aboutus', component: AboutUsComponent},
   {path: 'contact', component: ContactComponent},
   {path: 'register', component: RegisterComponent},
+  
   
   {path: '**', redirectTo: 'login', pathMatch: 'full'}
 ];
